@@ -1,0 +1,102 @@
+@import '../../base';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background-color: $black-primary;
+
+  height: 10vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+
+  &__menu {
+    display: none;
+  }
+
+  &__logo {
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
+    display: block;
+  }
+
+  form {
+    flex: 0.6;
+    display: flex;
+    align-items: center;
+    padding: 0.3rem 0.1rem;
+    margin: 0.1rem;
+    border-radius: 999px;
+    border: 1.2px solid $border-color;
+    background-color: $black-secondary;
+
+    input {
+      width: 100%;
+      background-color: transparent;
+      margin-left: 1rem;
+      border: none;
+      padding: 0;
+      font-weight: 500;
+      outline: transparent;
+      color: $text-color;
+      align-self: start;
+
+      &:focus {
+        outline: transparent;
+      }
+    }
+
+    button {
+      border: none;
+      margin: -0.3rem -0.1rem -0.3rem 0;
+      box-shadow: none;
+      background-color: $border-color;
+      color: $text-color;
+      padding: 0.3rem;
+      padding-right: 1rem;
+      padding-left: 0.8rem;
+      border-radius: 0 999px 999px 0;
+    }
+  }
+
+  &__icons {
+    flex: 0.15;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    img {
+      border-radius: 50%;
+      width: 40px;
+      object-fit: contain;
+      margin-left: 5px;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .header {
+    padding: 1rem;
+
+    &__menu {
+      display: block;
+      margin-right: 0.8rem;
+    }
+
+    &__logo {
+      display: none;
+    }
+
+    form {
+      flex: 1;
+    }
+
+    &__icons > *:not(img) {
+      display: none;
+    }
+  }
+}
